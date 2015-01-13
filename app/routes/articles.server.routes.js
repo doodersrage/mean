@@ -4,7 +4,7 @@ var users = require('../../app/controllers/users.server.controller'),
 module.exports = function(app){
 	app.route('/api/articles')
 		.get(articles.list)
-		post(users.requiresLogin, articles.create);
+		.post(users.requiresLogin, articles.create);
 
 	app.route('/api/articles/:articleId')
 		.get(articles.list)
