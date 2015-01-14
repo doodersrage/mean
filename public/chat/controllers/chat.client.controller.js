@@ -1,4 +1,4 @@
-angular('chat').controller('ChatController', ['$scope', 'Socket', 
+angular.module('chat').controller('ChatController', ['$scope', 'Socket', 
 	function($scope, Socket){
 		$scope.messages = [];
 

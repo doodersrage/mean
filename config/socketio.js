@@ -10,7 +10,7 @@ module.exports = function(server, io, mongoStore){
 			mongoStore.get(sessionId, function(err, session){
 				socket.request.session = session;
 
-				passport.initialize().(socket.request, {}, function(){
+				passport.initialize()(socket.request, {}, function(){
 					passport.session()(socket.request, {}, function(){
 						if(socket.request.user){
 							next(null, true);
