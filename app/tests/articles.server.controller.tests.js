@@ -38,7 +38,7 @@ describe('Articles Controller Unit Tests:', function(){
 				.expect('Content-Type', /json/)
 				.expect(200)
 				.end(function(err, res){
-					res.body.should.be.an.Array.and.have.kengthOf(1);
+					res.body.should.be.an.Array.and.have.lengthOf(1);
 					res.body[0].should.have.property('title', article.title);
 					res.body[0].should.have.property('content', article.content);
 
