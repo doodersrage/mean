@@ -116,7 +116,7 @@ exports.create = function(req, res, next){
 			res.json(user);
 		}
 	});
-}
+};
 
 exports.list = function(req, res, next){
 	User.find({}, function(err, users) {
@@ -173,4 +173,4 @@ exports.requiresLogin = function(req, res, next) {
 	}
 
 	next();
-}
+};

@@ -1,6 +1,6 @@
 var config = require('./config'),
 	http = require('http'),
-	socketio = require('socket.io')
+	socketio = require('socket.io'),
 	express = require('express'),
 	morgan = require('morgan'),
 	compress = require('compression'),
@@ -55,4 +55,4 @@ module.exports = function(db){
 	require('./socketio')(server, io, mongoStore);
 
 	return server;
-}
+};

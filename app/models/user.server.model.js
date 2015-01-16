@@ -88,11 +88,11 @@ UserSchema.pre('save', function(next){
 
 UserSchema.methods.hashPassword = function(password){
 	return crypto.pbkdf2Sync(password, this.salt, 10000, 64).toString('base64');
-}
+};
 
 UserSchema.methods.authenticate = function(password) {
 	return this.password === this.hashPassword(password);
-}
+};
 
 UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
 	var _this = this;
@@ -115,13 +115,13 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
 
 UserSchema.statics.findOneByUsername = function (username, callback) {
 	this.findOne({username: new RegExp(username, 'i')}, callback);
-}
+};
 
 UserSchema.post('save', function(next){
 	if(this.isNew){
 		console.log('A new user was created.');
 	} else {
-		console.log('A user updated its details.')
+		console.log('A user updated its details.');
 	}
 });
 
